@@ -1,2 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/notes/feed.xml" rel="self" type="application/atom+xml" /><link href="/notes/" rel="alternate" type="text/html" /><updated>2017-09-04T21:27:11+10:00</updated><id>/notes/</id><title type="html">快乐心情</title><subtitle>Hope I can insist on keeping write note
-</subtitle><entry><title type="html">Spring Boot Check List</title><link href="/notes/java/2017/09/03/Spring-Boot-Check-List.html" rel="alternate" type="text/html" title="Spring Boot Check List" /><published>2017-09-03T00:00:00+10:00</published><updated>2017-09-03T00:00:00+10:00</updated><id>/notes/java/2017/09/03/Spring-Boot-Check-List</id><content type="html" xml:base="/notes/java/2017/09/03/Spring-Boot-Check-List.html">&lt;p&gt;&lt;a href=&quot;https://spring.io/guides/gs/rest-service/&quot;&gt;Building a RESTful Web Service&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Building a RESTful Web Service</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/notes/feed.xml" rel="self" type="application/atom+xml" /><link href="/notes/" rel="alternate" type="text/html" /><updated>2017-09-04T23:58:12+10:00</updated><id>/notes/</id><title type="html">快乐心情</title><subtitle>Hope I can insist on keeping write note
+</subtitle><entry><title type="html">Spring Boot Demo List</title><link href="/notes/java/2017-09-03-spring-boot-demo-list.html" rel="alternate" type="text/html" title="Spring Boot Demo List" /><published>2017-09-03T00:00:00+10:00</published><updated>2017-09-03T00:00:00+10:00</updated><id>/notes/java/spring-boot-demo-list</id><content type="html" xml:base="/notes/java/2017-09-03-spring-boot-demo-list.html">&lt;h3 id=&quot;basics&quot;&gt;Basics&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/maven/&quot;&gt;Building Java Projects with Maven&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/gradle/&quot;&gt;Building Java Projects with Gradle&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/multi-module/&quot;&gt;Creating a Multi Module Project&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/testing-restdocs/&quot;&gt;Creating API Documentation with Restdocs&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;jpa-data&quot;&gt;JPA, Data&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-data-jpa/&quot;&gt;Accessing Data with JPA&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/relational-data-access/&quot;&gt;Accessing Relational Data using JDBC with Spring&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-data-neo4j/&quot;&gt;Accessing Data with Neo4j&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/integration/&quot;&gt;Integrating Data&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-data-mongodb/&quot;&gt;Accessing Data with MongoDB&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-data-mysql/&quot;&gt;Accessing data with MySQL&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;restful&quot;&gt;RESTful&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/rest-service/&quot;&gt;Building a RESTful Web Service&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/consuming-rest/&quot;&gt;Consuming a RESTful Web Service&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/actuator-service/&quot;&gt;Building a RESTful Web Service with Spring Boot Actuator&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/rest-hateoas/&quot;&gt;Building a Hypermedia-Driven RESTful Web Service&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/consuming-rest-angularjs/&quot;&gt;Consuming a RESTful Web Service with AngularJS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/consuming-rest-restjs/&quot;&gt;Consuming a RESTful Web Service with rest.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/consuming-rest-jquery/&quot;&gt;Consuming a RESTful Web Service with jQuery&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/rest-service-cors/&quot;&gt;Enabling Cross Origin Requests for a RESTful Web Service&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-data-rest/&quot;&gt;Accessing JPA Data with REST&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-neo4j-data-rest/&quot;&gt;Accessing Neo4j Data with REST&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-mongodb-data-rest/&quot;&gt;Accessing MongoDB Data with REST&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/accessing-gemfire-data-rest/&quot;&gt;Accessing GemFire Data with REST&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;yarn&quot;&gt;YARN&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;others&quot;&gt;Others&lt;/h3&gt;</content><author><name></name></author><summary type="html">Basics</summary></entry></feed>
