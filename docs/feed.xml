@@ -1,11 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="/notes/feed.xml" rel="self" type="application/atom+xml" /><link href="/notes/" rel="alternate" type="text/html" /><updated>2017-09-04T23:58:12+10:00</updated><id>/notes/</id><title type="html">快乐心情</title><subtitle>Hope I can insist on keeping write note
-</subtitle><entry><title type="html">Spring Boot Demo List</title><link href="/notes/java/2017-09-03-spring-boot-demo-list.html" rel="alternate" type="text/html" title="Spring Boot Demo List" /><published>2017-09-03T00:00:00+10:00</published><updated>2017-09-03T00:00:00+10:00</updated><id>/notes/java/spring-boot-demo-list</id><content type="html" xml:base="/notes/java/2017-09-03-spring-boot-demo-list.html">&lt;h3 id=&quot;basics&quot;&gt;Basics&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/notes/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/notes/" rel="alternate" type="text/html" /><updated>2017-09-15T23:30:51+10:00</updated><id>http://localhost:4000/notes/</id><title type="html">快乐心情</title><subtitle>Hope I can insist on keeping write note
+</subtitle><entry><title type="html">Alfred Declarative Syntax</title><link href="http://localhost:4000/notes/jenkins/2017-09-15-alfred-declarative-syntax.html" rel="alternate" type="text/html" title="Alfred Declarative Syntax" /><published>2017-09-15T00:00:00+10:00</published><updated>2017-09-15T00:00:00+10:00</updated><id>http://localhost:4000/notes/jenkins/alfred-declarative-syntax</id><content type="html" xml:base="http://localhost:4000/notes/jenkins/2017-09-15-alfred-declarative-syntax.html">&lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+&lt;p&gt;相比 Groovy 语法，Declarative 更简单易用。&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;As it is a fully featured programming environment, Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users. The Groovy learning-curve isn’t typically desirable for all members of a given team, so Declarative Pipeline was created to offer a simpler and more opinionated syntax for authoring Jenkins Pipeline.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/maven/&quot;&gt;Building Java Projects with Maven&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;sections&quot;&gt;Sections&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jenkins.io/doc/book/pipeline/syntax/#agent&quot; target=&quot;_blank&quot;&gt;agent&lt;/a&gt; &lt;sup&gt;&lt;b&gt;required&lt;/b&gt;&lt;/sup&gt;
+    &lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pipeline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 能用的 Agents 都可以用&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;any&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 在 top-level 不启用，但必须在 stage 中指定&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Agents 标签，一个标签可能包含多个 Agent&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'agents label name'&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 指定具体的 Agent&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'agent name'&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// docker&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;docker&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'maven:3-alpine'&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'my-defined-label'&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;  &lt;span class=&quot;s1&quot;&gt;'-v /tmp:/tmp'&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// dockerfile&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;agent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// dockerfile 和当前 Jenkinsfile 在同一目录&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;dockerfile&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// dockerfile 在其他目录&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;dockerfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'someSubDir'&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;// 额外参数&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;additionalBuildArgs&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'--build-arg foo=bar'&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jenkins.io/doc/book/pipeline/syntax/#post&quot; target=&quot;_blank&quot;&gt;post&lt;/a&gt;
+    &lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;pipeline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// top-level 或 stage&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 不管完成状态是成功还是失败，始终会执行&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;always&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 和前一个 Job 状态比较，如果不一样就执行&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;changed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;failure&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;success&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// 黄色图标那种，一般是因为测试失败，或者代码不符合规范&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;unstable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;aborted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jenkins.io/doc/book/pipeline/syntax/#stages&quot; target=&quot;_blank&quot;&gt;stages&lt;/a&gt; &lt;sup&gt;&lt;b&gt;required&lt;/b&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jenkins.io/doc/book/pipeline/syntax/#steps&quot; target=&quot;_blank&quot;&gt;steps&lt;/a&gt; &lt;sup&gt;&lt;b&gt;required&lt;/b&gt;&lt;/sup&gt;
+    &lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 层级结构&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// pipeline &amp;gt; stages &amp;gt; stage &amp;gt; steps&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pipeline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;stages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;stage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Build'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;n&quot;&gt;steps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+          &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;directives&quot;&gt;Directives&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;environment&lt;/li&gt;
+  &lt;li&gt;options&lt;/li&gt;
+  &lt;li&gt;parameters&lt;/li&gt;
+  &lt;li&gt;triggers&lt;/li&gt;
+  &lt;li&gt;stage&lt;/li&gt;
+  &lt;li&gt;tools&lt;/li&gt;
+  &lt;li&gt;when&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;steps&quot;&gt;Steps&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;script&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">简介 相比 Groovy 语法，Declarative 更简单易用。 As it is a fully featured programming environment, Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users. The Groovy learning-curve isn’t typically desirable for all members of a given team, so Declarative Pipeline was created to offer a simpler and more opinionated syntax for authoring Jenkins Pipeline.</summary></entry><entry><title type="html">Spring Boot Demo List</title><link href="http://localhost:4000/notes/java/2017-09-03-spring-boot-demo-list.html" rel="alternate" type="text/html" title="Spring Boot Demo List" /><published>2017-09-03T00:00:00+10:00</published><updated>2017-09-03T00:00:00+10:00</updated><id>http://localhost:4000/notes/java/spring-boot-demo-list</id><content type="html" xml:base="http://localhost:4000/notes/java/2017-09-03-spring-boot-demo-list.html">&lt;h3 id=&quot;basics&quot;&gt;Basics&lt;/h3&gt;
+
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/maven/&quot;&gt;Building Java Projects with Maven&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/gradle/&quot;&gt;Building Java Projects with Gradle&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/multi-module/&quot;&gt;Creating a Multi Module Project&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type=&quot;checkbox&quot; checked=&quot;&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/multi-module/&quot;&gt;Creating a Multi Module Project&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;input type=&quot;checkbox&quot; /&gt; &lt;a href=&quot;https://spring.io/guides/gs/testing-restdocs/&quot;&gt;Creating API Documentation with Restdocs&lt;/a&gt;&lt;/p&gt;
 

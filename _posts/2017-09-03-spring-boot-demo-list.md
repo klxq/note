@@ -4,11 +4,11 @@ categories: java
 ---
 ### Basics
 
-<input type="checkbox"> [Building Java Projects with Maven](https://spring.io/guides/gs/maven/)
+<input type="checkbox" checked> [Building Java Projects with Maven](https://spring.io/guides/gs/maven/)
 
 <input type="checkbox"> [Building Java Projects with Gradle](https://spring.io/guides/gs/gradle/)
 
-<input type="checkbox"> [Creating a Multi Module Project](https://spring.io/guides/gs/multi-module/)
+<input type="checkbox" checked> [Creating a Multi Module Project](https://spring.io/guides/gs/multi-module/)
 
 <input type="checkbox"> [Creating API Documentation with Restdocs](https://spring.io/guides/gs/testing-restdocs/)
 

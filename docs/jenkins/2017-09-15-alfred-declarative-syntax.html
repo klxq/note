@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Alfred Declarative Syntax | 快乐心情</title>
+<meta property="og:title" content="Alfred Declarative Syntax" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="简介 相比 Groovy 语法，Declarative 更简单易用。 As it is a fully featured programming environment, Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users. The Groovy learning-curve isn’t typically desirable for all members of a given team, so Declarative Pipeline was created to offer a simpler and more opinionated syntax for authoring Jenkins Pipeline." />
+<meta property="og:description" content="简介 相比 Groovy 语法，Declarative 更简单易用。 As it is a fully featured programming environment, Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users. The Groovy learning-curve isn’t typically desirable for all members of a given team, so Declarative Pipeline was created to offer a simpler and more opinionated syntax for authoring Jenkins Pipeline." />
+<link rel="canonical" href="http://localhost:4000/notes/jenkins/2017-09-15-alfred-declarative-syntax.html" />
+<meta property="og:url" content="http://localhost:4000/notes/jenkins/2017-09-15-alfred-declarative-syntax.html" />
+<meta property="og:site_name" content="快乐心情" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-09-15T00:00:00+10:00" />
+<script type="application/ld+json">
+{"name":null,"description":"简介 相比 Groovy 语法，Declarative 更简单易用。 As it is a fully featured programming environment, Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users. The Groovy learning-curve isn’t typically desirable for all members of a given team, so Declarative Pipeline was created to offer a simpler and more opinionated syntax for authoring Jenkins Pipeline.","author":null,"@type":"BlogPosting","url":"http://localhost:4000/notes/jenkins/2017-09-15-alfred-declarative-syntax.html","publisher":null,"image":null,"headline":"Alfred Declarative Syntax","dateModified":"2017-09-15T00:00:00+10:00","datePublished":"2017-09-15T00:00:00+10:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/notes/jenkins/2017-09-15-alfred-declarative-syntax.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="description" content="Hope I can insist on keeping write note
+"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/notes/assets/css/style.css?v=">
+  </head>
+  <body>
+    <section class="main-content">
+      <a href="/notes/">HOME</a>
+      <h1>Alfred Declarative Syntax</h1>
+      <h3 id="简介">简介</h3>
+<p>相比 Groovy 语法，Declarative 更简单易用。</p>
+<blockquote>
+  <p>As it is a fully featured programming environment, Scripted Pipeline offers a tremendous amount of flexibility and extensibility to Jenkins users. The Groovy learning-curve isn’t typically desirable for all members of a given team, so Declarative Pipeline was created to offer a simpler and more opinionated syntax for authoring Jenkins Pipeline.</p>
+</blockquote>
+
+<h4 id="sections">Sections</h4>
+<ul>
+  <li><a href="https://jenkins.io/doc/book/pipeline/syntax/#agent" target="_blank">agent</a> <sup><b>required</b></sup>
+    <div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">pipeline</span> <span class="o">{</span>
+  <span class="c1">// 能用的 Agents 都可以用</span>
+  <span class="n">agent</span> <span class="n">any</span>
+  <span class="c1">// 在 top-level 不启用，但必须在 stage 中指定</span>
+  <span class="n">agent</span> <span class="n">none</span>
+  <span class="c1">// Agents 标签，一个标签可能包含多个 Agent</span>
+  <span class="n">agent</span> <span class="o">{</span>
+      <span class="n">label</span> <span class="s1">'agents label name'</span>
+  <span class="o">}</span>
+  <span class="c1">// 指定具体的 Agent</span>
+  <span class="n">agent</span> <span class="o">{</span>
+      <span class="n">node</span> <span class="o">{</span>
+          <span class="n">label</span> <span class="s1">'agent name'</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="c1">// docker</span>
+  <span class="n">agent</span> <span class="o">{</span>
+      <span class="n">docker</span> <span class="o">{</span>
+          <span class="n">image</span> <span class="s1">'maven:3-alpine'</span>
+          <span class="n">label</span> <span class="s1">'my-defined-label'</span>
+          <span class="n">args</span>  <span class="s1">'-v /tmp:/tmp'</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="c1">// dockerfile</span>
+  <span class="n">agent</span> <span class="o">{</span>
+      <span class="c1">// dockerfile 和当前 Jenkinsfile 在同一目录</span>
+      <span class="n">dockerfile</span> <span class="kc">true</span>
+      <span class="c1">// dockerfile 在其他目录</span>
+      <span class="n">dockerfile</span> <span class="o">{</span>
+          <span class="n">dir</span> <span class="s1">'someSubDir'</span>
+          <span class="c1">// 额外参数</span>
+          <span class="n">additionalBuildArgs</span> <span class="s1">'--build-arg foo=bar'</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li><a href="https://jenkins.io/doc/book/pipeline/syntax/#post" target="_blank">post</a>
+    <div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">pipeline</span> <span class="o">{</span>
+  <span class="c1">// top-level 或 stage</span>
+  <span class="n">post</span> <span class="o">{</span>
+      <span class="c1">// 不管完成状态是成功还是失败，始终会执行</span>
+      <span class="n">always</span> <span class="o">{</span> <span class="o">}</span>
+      <span class="c1">// 和前一个 Job 状态比较，如果不一样就执行</span>
+      <span class="n">changed</span> <span class="o">{</span> <span class="o">}</span>
+      <span class="n">failure</span> <span class="o">{</span> <span class="o">}</span>
+      <span class="n">success</span> <span class="o">{</span> <span class="o">}</span>
+      <span class="c1">// 黄色图标那种，一般是因为测试失败，或者代码不符合规范</span>
+      <span class="n">unstable</span> <span class="o">{</span> <span class="o">}</span>
+      <span class="n">aborted</span> <span class="o">{</span> <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li><a href="https://jenkins.io/doc/book/pipeline/syntax/#stages" target="_blank">stages</a> <sup><b>required</b></sup></li>
+  <li><a href="https://jenkins.io/doc/book/pipeline/syntax/#steps" target="_blank">steps</a> <sup><b>required</b></sup>
+    <div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="c1">// 层级结构</span>
+<span class="c1">// pipeline &gt; stages &gt; stage &gt; steps</span>
+<span class="n">pipeline</span> <span class="o">{</span>
+  <span class="n">stages</span> <span class="o">{</span>
+      <span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">steps</span> <span class="o">{</span>
+
+          <span class="o">}</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h4 id="directives">Directives</h4>
+<ul>
+  <li>environment</li>
+  <li>options</li>
+  <li>parameters</li>
+  <li>triggers</li>
+  <li>stage</li>
+  <li>tools</li>
+  <li>when</li>
+</ul>
+
+<h4 id="steps">Steps</h4>
+<ul>
+  <li>script</li>
+</ul>
+
+
+    
+  </body>
+</html>
